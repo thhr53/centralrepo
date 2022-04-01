@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Jyotiprakash Satapathy <thhr53@live.com>
+MAINTAINER Jyotiprakash <thhr53@live.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
