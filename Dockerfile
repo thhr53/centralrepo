@@ -1,4 +1,4 @@
-M ubuntu:trusty
+FROM ubuntu:trusty
 MAINTAINER Alen Komljen <alen.komljen@live.com>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -16,17 +16,15 @@ RUN chmod +x /usr/sbin/policy-rc.d
 
 RUN \
   apt-get update && \
-    apt-get -y install \
-              software-properties-common \
-	                vim \
-			          pwgen \
-				            unzip \
-					              curl \
-						                git-core && \
-								  rm -rf /var/lib/apt/lists/*
+  apt-get -y install \
+          software-properties-common \
+          vim \
+          pwgen \
+          unzip \
+          curl \
+          git-core && \
+  rm -rf /var/lib/apt/lists/*
 
-								  COPY tcp_wait.sh tcp_wait.sh
-								  COPY create_db_pg.sh create_db_pg.sh
-								  COPY create_db_mysql.sh create_db_mysql.sh
-
-
+COPY tcp_wait.sh tcp_wait.sh
+COPY create_db_pg.sh create_db_pg.sh
+COPY create_db_mysql.sh create_db_mysql.sh
